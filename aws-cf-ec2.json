@@ -1,0 +1,56 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "CloudFormation template for creating an ec2 instance for TouchBistro",
+    "Parameters": {
+        "KeyName": {
+            "Description": "Key Pair name",
+            "Type": "AWS::EC2::KeyPair::KeyName",
+            "Default": "TouchBistroKP"
+        },
+        "VPC": {
+            "Type": "AWS::EC2::VPC::Id",
+            "Default": "vpc-0740a5506544aaaf0"
+        },
+        "Subnet":{
+            "Type": "AWS::EC2::Subnet::Id",
+            "Default":"subnet-03f1ba8fb4c01acb2"
+        },
+        "InstanceType": {
+            "Description": "Select one of the possible instance types",
+            "Type": "String",
+            "Default": "t2.micro",
+            "AllowedValues": ["t2.micro", "t2.small", "t2.medium"]
+        }
+    },
+    "Resources":{
+        "TBSecurityGroup":{
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "TB security group",
+                "VpcId": {"Ref": "VPC"},
+                "SecurityGroupIngress": [{
+                    "CidrIp": "0.0.0.0/0",
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "ToPort": 443
+                }]
+            }
+        },
+        "TBServer": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-062f7200baf2fa504",
+                "InstanceType": {"Ref": "InstanceType"},
+                "KeyName": {"Ref": "KeyName"},
+                "SecurityGroupIds": [{"Ref": "TBSecurityGroup"}],
+                "SubnetId": {"Ref": "Subnet"}
+            }
+        }
+    },
+    "Outputs": {
+        "PublicName": {
+            "Value": {"Fn::GetAtt": ["TBServer", "PublicDnsName"]},
+            "Description": "Public name (connect via SSH)"
+        }   
+    }
+}

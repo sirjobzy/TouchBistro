@@ -5,13 +5,17 @@ This project was created to solve the "TouchBistro SRE Challenge"
 
 The requirements for the project is listed Bellow
 
-EC2
+    EC2
     ● Create an ec2 instance in your own AWS account.
-    ● Create the instance using Infrastructure as Code tool of your choice (ie Cloudformation,
-Terraform, or an AWS SDK.)
+
+    ● Create the instance using Infrastructure as Code tool of your choice (ie Cloudformation,Terraform, or an AWS SDK.)
+
     ● Configure the ec2 instance to be a basic nginx server (just install nginx the basic configuration is fine), this will display the basic nginx web page.
+
     ● Make use of configuration management for installing the nginx server. (Chef, Ansible,Puppet)
+
     ● Create an internal Route 53 domain and A records, this should also be done via Infrastructure as Code.
+    
     ● Create ec2 instance in a public zone so that it can be accessed over 443 from the internet.
 
 Standard:

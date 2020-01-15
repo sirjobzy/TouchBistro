@@ -1,0 +1,9 @@
+#update
+
+---
+
+    - hosts: tbserver
+      become: true
+      tasks:
+        - name: update os
+          yum: name=* state=latest

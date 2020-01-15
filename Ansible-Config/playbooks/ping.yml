@@ -1,0 +1,9 @@
+#ping.yml
+
+---
+
+    - hosts: tbserver
+      tasks:
+        - name: ping servers
+          action: ping
+          

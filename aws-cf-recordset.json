@@ -1,0 +1,18 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "CloudFormation template for creating an ec2 instance for TouchBistro",
+    "Resources":{
+        "RecordSet":{
+                "Type" : "AWS::Route53::RecordSet",
+                "Properties" : {
+                    "Comment" : "internal dns for webserver",
+                    "HostedZoneId" : "Z10279152ULACDMFMEVAE",
+                    "Type" : "A",
+                    "Name" : "s1.touchbistro.internal",
+                    "ResourceRecords" : ["10.0.0.71"],
+                    "TTL" : "60"
+                  }
+        }
+    }
+
+}

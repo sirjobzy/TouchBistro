@@ -39,7 +39,7 @@
         "TBServer": {
             "Type": "AWS::EC2::Instance",
             "Properties": {
-                "ImageId": "ami-0c322300a1dd5dc79",
+                "ImageId": "ami-04b9e92b5572fa0d1",
                 "InstanceType": {"Ref": "InstanceType"},
                 "KeyName": {"Ref": "KeyName"},
                 "SecurityGroupIds": [{"Ref": "TBSecurityGroup"}],

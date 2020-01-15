@@ -10,7 +10,7 @@ The requirements for the project is listed Bellow
 
     ● Create the instance using Infrastructure as Code tool of your choice (ie Cloudformation,Terraform, or an AWS SDK.)
 
-    ● Configure the ec2 instance to be a basic nginx server (just install nginx the basic configuration is fine), this will display the basic nginx web page.
+    ● Configure the ec2 instance to be a basic nginx server (just install nginx the basic configuration is fine), this will display the     basic nginx web page.
 
     ● Make use of configuration management for installing the nginx server. (Chef, Ansible,Puppet)
 
@@ -37,4 +37,4 @@ The process of the executing this challenge is listed below:
 
 2. Installation of the nginx server was done using an Ansible playbook, this playbook is in the Ansible-Config/templates folder, this playbook installs nginx and ensure the service is up and running.
 3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2, nginx-le.j2,nginx.conf.j2
-4. 
+ 

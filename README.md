@@ -18,12 +18,12 @@ The requirements for the project is listed Bellow
     
     ● Create ec2 instance in a public zone so that it can be accessed over 443 from the internet.
 
-Standard:
+    Standard:
     1. Create a github repo for this project. A README file fully documenting the project is required. Versioning and branches are at your discretion.
     2. Be sure to store keys and credentials (if necessary) safely via a mechanism of your choice. (Online services such as google drive, or a password manager is fine).
     3. Please create your own AWS account for this project and create a user for us to have access. (Read only access is fine)
 
-Bonus:
+    Bonus:
     1. Add a Let’s Encrypt certificate to the nginx configuration using config management.
     2. Ensure that access to SSH to the EC2 is blocked from the world but allow HTTPS traffic.
 

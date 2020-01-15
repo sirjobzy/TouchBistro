@@ -36,5 +36,4 @@ The process of the executing this challenge is listed below:
    d. A Recordset within the private zone for internal routing using the private IP address
 
 2. Installation of the nginx server was done using an Ansible playbook, this playbook is in the Ansible-Config/templates folder, this playbook installs nginx and ensure the service is up and running.
-3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2, nginx-le.j2,nginx.conf.j2
-4. 
+3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2,nginx-le.j2,nginx.conf.j2

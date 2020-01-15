@@ -45,7 +45,32 @@
                 "SecurityGroupIds": [{"Ref": "TBSecurityGroup"}],
                 "SubnetId": {"Ref": "Subnet"}
             }
-        }
+        },
+        "TouchBistroPrivateZone": {
+            "Type" : "AWS::Route53::HostedZone",
+            "Properties" : {
+              "Name" : "touchbistro.internal",
+              "HostedZoneConfig": {
+                "Comment": "Internal Domain for TouchBistro Challenge"
+             },
+              "VPCs" : [ {"VPCId" :"vpc-0740a5506544aaaf0" , "VPCRegion" :"us-east-1" }]
+            }
+          },
+          "RecordSet":{
+            "Type" : "AWS::Route53::RecordSet",
+            "Properties" : {
+                "Comment" : "internal dns for webserver",
+                "HostedZoneId" : {"Ref": "TouchBistroPrivateZone"},
+                "Type" : "A",
+                "Name" : "s1.touchbistro.internal",
+                "ResourceRecords" : [
+                    {
+                        "Fn::GetAtt" : ["TBServer", "PrivateIp"]
+                    }
+                ],
+                "TTL" : "60"
+              }
+    }
     },
     "Outputs": {
         "PublicName": {

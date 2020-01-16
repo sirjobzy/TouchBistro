@@ -5,5 +5,12 @@
     - hosts: tbserver
       become: true
       tasks:
-        - name: update os
-          yum: name=* state=latest
+        - name: Update and upgrade apt packages
+          apt:
+              upgrade: yes
+              update_cache: yes
+              cache_valid_time: 86400 #One day
+        - name: Upgrade all packages to the latest version
+          apt:
+              name: "*"
+              state: latest

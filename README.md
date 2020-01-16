@@ -31,14 +31,10 @@ The requirements for the project is listed Bellow
 The process of the executing this challenge is listed below:
 1. Inorder to provision an EC2 instance on AWS using cloudformation, a template named "aws-cf-ec2.json" was created. The following resources were created using that Template :
    a. An EC2 Instance in a VPC and custom subnet.
-   b. A security group that was attached to the EC2 instance to premit only HTTPS traffice into the instance.
+   b. A security group that was attached to the EC2 instance to premit only HTTPS and HTTP traffic into the instance.
    c. A pivate hosted zone in Route 53 for internal routing.
    d. A Recordset within the private zone for internal routing using the private IP address
 
 2. Installation of the nginx server was done using an Ansible playbook, this playbook is in the Ansible-Config/templates folder, this playbook installs nginx and ensure the service is up and running.
-<<<<<<< HEAD
+
 3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2,nginx-le.j2,nginx.conf.j2
-=======
-3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2, nginx-le.j2,nginx.conf.j2
- 
->>>>>>> 953821be47d84604b968ed9ec48c8ca93e6e0843

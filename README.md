@@ -40,5 +40,3 @@ The process of the executing this challenge is listed below:
 3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2,nginx-le.j2,nginx.conf.j2
 =======
 3. After installing the nginx server, a playbook was used by ansible to automatically create a Let's Encrypt certificate and install it in the nginx configuration to enable secure connection to the webserver. The name of the playbook that was used is in the Ansible-Config/ folder and it is named playbook.yml, it also references some other files in the templates folder namely: nginx-http.j2, nginx-le.j2,nginx.conf.j2
- 
->>>>>>> 953821be47d84604b968ed9ec48c8ca93e6e0843
